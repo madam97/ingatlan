@@ -1,0 +1,9 @@
+header {
+  &>nav {
+    height: $header-height;
+  }
+}
+
+footer {
+  min-height: $footer-height;
+}
