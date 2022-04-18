@@ -1,0 +1,12 @@
+.component-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacer;
+  padding: 0 $spacer * 1.5;
+  height: $spacer * 3;
+
+  * {
+    margin: 0;
+  }
+}
