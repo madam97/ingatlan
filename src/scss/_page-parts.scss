@@ -12,6 +12,7 @@ header {
 
   @media (max-width: breakpoint-max('sm')) {
     #main-menu {
+      top: calc($spacer + $header-height);
       right: $spacer;
       max-width: unset;
     }
