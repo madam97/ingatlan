@@ -1,9 +1,9 @@
 // Colors
-$white:               #ffffff;
+$gray-600:            #666666;
 $primary:             #323EC8;
 $secondary:           #EBECFA;
 
-$light:               $white;
+$light:               #ffffff;
 $bg-light:            #FAFBFF;
 $body-bg:             $bg-light;
 
@@ -11,6 +11,10 @@ $body-bg:             $bg-light;
 $spacer:              1.25rem;
 $border-radius:       1rem;
 $border-radius-sm:    0.5rem;
+
+// Fonts
+$headings-font-family:                'Red Hat Display', sans-serif;
+$headings-font-weight:                700;
 
 // Grid
 $container-padding-x: $spacer;

@@ -6,7 +6,25 @@
   padding: 0 $spacer * 1.5;
   height: $spacer * 3;
 
-  * {
+  h1 {
     margin: 0;
+    font-size: 1.5rem;
+  }
+
+  span {
+    @extend .heading-font;
+    color: $gray-600;
+  }
+
+  @media (max-width: breakpoint-max('sm')) {
+    height: $spacer * 2;
+
+    h1 {
+      font-size: 1.125rem;
+    }
+
+    span {
+      font-size: 0.875rem;
+    }
   }
 }
