@@ -1,10 +1,13 @@
 import React from 'react';
+import Footer from './pages/parts/Footer';
+import Header from './pages/parts/Header';
 
 function App() {
   return (
-    <div className="App">
-      Working
-    </div>
+    <>
+      <Header />
+      <Footer />
+    </>
   );
 }
 
