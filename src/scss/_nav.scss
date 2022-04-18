@@ -1,0 +1,27 @@
+.navbar-toggler {
+  border: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem $spacer;
+  border-radius: $border-radius-sm;
+  color: $primary;
+  line-height: 1.75em;
+
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  svg {
+    margin-right: 0.875rem;
+  }
+}
