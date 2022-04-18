@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Red Hat Display";
+  src: local("☺"),
+    url("../fonts/RedHatDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: local("☺"),
+    url("../fonts/RedHatDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: local("☺"),
+    url("../fonts/SFProText-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
