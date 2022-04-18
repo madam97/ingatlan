@@ -7,14 +7,15 @@ $bg-light:            #FAFBFF;
 $body-bg:             $bg-light;
 
 // Sizes
-$border-radius:       16px;
+$spacer:              1.25rem;
+$border-radius:       1rem;
 
 // Navbar
 $navbar-light-color:                  $primary;
 $navbar-light-toggler-border-color:   $primary;
 
 // Utils
-$box-shadow:          0px 0px 20px rgba(50, 62, 200, 0.1);
+$box-shadow:          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
 
 // Sizes
 $header-height:       65px;

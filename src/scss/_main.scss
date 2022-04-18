@@ -1,0 +1,4 @@
+main {
+  padding-top: calc($spacer * 2 + $header-height);
+  min-height: calc(100vh - $footer-height);
+}
