@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Container, Carousel } from 'react-bootstrap';
+import { Container, Carousel, Modal } from 'react-bootstrap';
 import { ArrowLeftShort, ChevronLeft } from 'react-bootstrap-icons';
 import { fetchAd } from '../models/AdModel';
 import Ad from '../components/Ad';
@@ -14,6 +14,9 @@ export default function AdDetailed() {
 
   /** @const {IAd} ad The active ad's data */
   const [ad, setAd] = useState<IAd>();
+
+  /** @const {boolean} showContacts If true, shows the contacts' modal */
+  const [showContacts, setShowContacts] = useState<boolean>(false);
 
   /** Fetches the active ad */
   useEffect(() => {
@@ -34,6 +37,11 @@ export default function AdDetailed() {
     fetchData();
   }, [id]);
 
+  /** Shows or hides the contacts' modal */
+  const toggleContactModal = (): void => {
+    setShowContacts(!showContacts);
+  }
+
   // ------------------------------------------
 
   return (
@@ -51,31 +59,50 @@ export default function AdDetailed() {
       </Link>
 
       {ad && 
-        <Container className="mb-4">
-          <div className="ad-images-grid d-none d-sm-grid mb-4">
-            <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
-            <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
-            <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
-            <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
-          </div>
-
-          <Carousel className="ad-images-slide d-block d-sm-none" controls={false}>
-            <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
-            <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
-            <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
-            <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
-          </Carousel>
-
-          <Ad ad={ad} showImage={false} showUploadDate>
-            <div className="my-2 my-sm-4 p-3 rounded-1 shadow-inset fs-sm">{ad.description}</div>
-
-            <div className="text-end">
-              <button className="btn btn-primary btn-lg heading-font">
-                Kapcsolatfelvétel
-              </button>
+        <>
+          <Container className="mb-4">
+            <div className="ad-images-grid d-none d-sm-grid mb-4">
+              <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
+              <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
+              <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
+              <div className="bg-image" style={{ backgroundImage: `url(${ad.image})` }}></div>
             </div>
-          </Ad>
-        </Container>
+
+            <Carousel className="ad-images-slide d-block d-sm-none" controls={false}>
+              <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
+              <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
+              <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
+              <Carousel.Item className="bg-image" style={{ backgroundImage: `url(${ad.image})` }} />
+            </Carousel>
+
+            <Ad ad={ad} showImage={false} showUploadDate>
+              <div className="my-2 my-sm-4 p-3 rounded-1 shadow-inset fs-sm">{ad.description}</div>
+
+              <div className="text-end">
+                <button className="btn btn-primary btn-lg heading-font" onClick={toggleContactModal}>
+                  Kapcsolatfelvétel
+                </button>
+              </div>
+            </Ad>
+          </Container>
+
+          <Modal show={showContacts} centered onHide={toggleContactModal}>
+            <Modal.Header className="heading-font" closeButton>
+              Kapcsolatfelvétel
+            </Modal.Header>
+            <Modal.Body className="text-center">
+              <p>
+                <a className="link-primary" href={`mailto:${ad.contact.email}`}>{ad.contact.email}</a>
+              </p>
+
+              {ad.contact.parsedPhoneNumbers.map((phoneNumber, index) => 
+                <p className={index+1 === ad.contact.parsedPhoneNumbers.length ? 'mb-0' : ''}>
+                  <a key={phoneNumber} className="link-primary" href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+                </p>
+              )}
+            </Modal.Body>
+          </Modal>
+        </>
       }
     </main>
   )
