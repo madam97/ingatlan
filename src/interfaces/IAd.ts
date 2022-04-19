@@ -1,3 +1,5 @@
+import TAdStatus from '../types/TAdStatus';
+import TCurrency from '../types/TCurrency';
 import IContact from './IContact';
 
 interface IAd {
@@ -5,10 +7,10 @@ interface IAd {
   address: string,
   price: number,
   image: string,
-  currency: 'Euro' | 'Ft',
+  currency: TCurrency,
   uploadDate: string,
   description: string,
-  status: 'checked' | 'unchecked',
+  status: TAdStatus,
   contact: IContact
 }
 
