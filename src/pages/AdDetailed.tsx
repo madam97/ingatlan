@@ -37,7 +37,7 @@ export default function AdDetailed() {
 
   return (
     <main id="page-ad-detailed">
-      <Container className="mb-6 pl-main-menu" fluid>
+      <Container className="mb-6 pl-main-menu pl-main-menu-md" fluid>
         <Heading title="Részletek" />
       </Container>
 
