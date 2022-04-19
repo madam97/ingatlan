@@ -31,6 +31,8 @@
 .ad-component {
   .card-body {
     position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .card-img {
@@ -42,8 +44,23 @@
     padding-right: $spacer * 3;
   }
 
-  .subheading-font {
+  .ad-component-price {
+    @extend .subheading-font;
+
     line-height: 1em;
+  }
+
+  .ad-component-date {
+    @extend .subheading-font;
+
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 0;
+
+    svg {
+      margin-right: 0.5rem;
+    }
   }
 
   .favorite-btn-component {
@@ -76,7 +93,7 @@
       font-size: 1.875rem;
     }
 
-    .subheading-font {
+    .ad-component-price {
       font-size: 1.5rem;
     }
   }
@@ -93,7 +110,7 @@
       font-size: 1.5rem;
     }
 
-    .subheading-font {
+    .ad-component-price {
       font-size: 1rem;
     }
   }
