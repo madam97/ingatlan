@@ -11,7 +11,7 @@ export default function Header() {
         <Navbar.Toggle aria-controls="main-menu" />
 
         <Navbar.Collapse id="main-menu" className="fixed-top">
-          <Nav defaultActiveKey="/" className="flex-column p-3 w-100 rounded bg-light shadow">
+          <Nav className="flex-column p-3 w-100 rounded bg-light shadow">
             <LinkContainer to="/">
               <Nav.Link>
                 <ListUl /> Lista
