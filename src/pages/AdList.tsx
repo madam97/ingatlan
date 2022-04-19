@@ -28,7 +28,7 @@ export default function AdList() {
       <Container fluid>
         <Heading title="Lista" count={ads.length} />
 
-        {ads.map(ad => <Ad ad={ad} />)}
+        {ads.map(ad => <Ad key={ad.adId} ad={ad} />)}
       </Container>
     </main>
   )
