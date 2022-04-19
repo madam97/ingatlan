@@ -12,7 +12,7 @@ export default function Ad({ ad }: AdProps) {
     <Card className="ad-component mt-3 border-0 shadow-lg">
       <Card.Img src={ad.image} />
       <Card.Body>
-        <Card.Title className="mb-3">{ad.address}</Card.Title>
+        <Card.Title>{ad.address}</Card.Title>
         <Card.Text>
           <p className="subheading-font">{ad.price} {ad.currency}</p>
 
