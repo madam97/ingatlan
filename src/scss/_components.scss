@@ -29,18 +29,25 @@
 }
 
 .ad-component {
+  .card-body {
+    position: relative;
+  }
+
   @media (min-width: breakpoint-min('md')) {
     flex-direction: row;
+    min-height: 180px;
 
     .card-img {
+      flex-shrink: 0;
       object-fit: cover;
       width: 212px;
-      height: 180px;
+      min-height: 100%;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
 
     .card-title {
+      padding-right: $spacer * 3;
       font-size: 1.875rem;
     }
 
@@ -50,5 +57,24 @@
         line-height: 1em;
       }
     }
+
+    .favorite-btn-component {
+      position: absolute;
+      top: $spacer * 1.5;
+      right: $spacer;
+    }
+  }
+}
+
+.favorite-btn-component {
+  padding: 0;
+  width: $spacer * 2;
+  height: $spacer * 2;
+  border: 0;
+  line-height: 0;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
