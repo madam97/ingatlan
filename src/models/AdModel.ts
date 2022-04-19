@@ -9,11 +9,14 @@ const AD_URL = process.env.REACT_APP_API_BASE_URL + '/ads';
 
 /**
  * Returns ads' data
+ * @param {object} params
  * @returns {Promise<IAd[] | string>}
  */
-const fetchAds = async (): Promise<IAd[] | string> => {
+const fetchAds = async (params: object = {}): Promise<IAd[] | string> => {
   try {
-    const res = await axios.get(AD_URL);
+    const res = await axios.get(AD_URL, {
+      params
+    });
 
     return res.data ?? 'no data returned';
   } catch(err) {
