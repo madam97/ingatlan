@@ -1,4 +1,5 @@
 // Colors
+$white:               #ffffff;
 $gray-500:            #B2B2B2;
 $gray-600:            #666666;
 
@@ -6,7 +7,7 @@ $primary:             #323EC8;
 $secondary:           #EBECFA;
 $yellow:              #FFB300;
 
-$light:               #ffffff;
+$light:               $white;
 $bg-light:            #FAFBFF;
 $body-bg:             $bg-light;
 
@@ -20,6 +21,10 @@ $headings-font-family:                'Red Hat Display', sans-serif;
 $headings-font-weight:                700;
 $subheadings-font-weight:             500;
 
+// Utils
+$box-shadow:          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
+$box-shadow-lg:       0px 0px 0.625rem rgba(50, 62, 200, 0.2);
+
 // Grid
 $container-padding-x: $spacer;
 
@@ -28,11 +33,13 @@ $navbar-light-color:                  $primary;
 $navbar-light-toggler-border-color:   $primary;
 
 // Buttons
-$btn-border-radius:   $border-radius-sm;
+$btn-border-radius:                   $border-radius-sm;
 
-// Utils
-$box-shadow:          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
-$box-shadow-lg:       0px 0px 0.625rem rgba(50, 62, 200, 0.2);
+// Form
+$input-bg:                            $white;
+$form-select-border-width:            0;
+$form-select-border-radius:           $border-radius-sm;
+$form-select-focus-box-shadow:        $box-shadow-lg;
 
 // Sizes
 $header-height:       65px;
