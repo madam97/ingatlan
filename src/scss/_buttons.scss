@@ -1,0 +1,10 @@
+.btn-secondary {
+  @extend .heading-font;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary;
+  }
+}
