@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import Ad from '../components/Ad';
 import Heading from '../components/Heading';
 import IAd from '../interfaces/IAd';
 
@@ -30,6 +31,8 @@ export default function AdList() {
     <main className="pl-main-menu">
       <Container fluid>
         <Heading title="Lista" count={ads.length} />
+
+        {ads.map(ad => <Ad ad={ad} />)}
       </Container>
     </main>
   )
