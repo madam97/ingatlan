@@ -7,8 +7,10 @@ import IAd from '../interfaces/IAd';
 
 export default function AdList() {
 
+  /** @const {IAd[]} ads The list of all ads */
   const [ads, setAds] = useState<IAd[]>([]);
 
+  /** Fetches ads */
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       const res = await fetchAds();

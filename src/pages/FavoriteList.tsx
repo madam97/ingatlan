@@ -8,10 +8,13 @@ import TOrder from '../types/TOrder';
 
 export default function FavoriteList() {
 
+  /** @const {IAd[]} ads The list of favorite ads */
   const [ads, setAds] = useState<IAd[]>([]);
+
+  /** @const {string} activeOrder The id of the current sort command */
   const [activeOrder, setActiveOrder] = useState<string>('');
 
-  /** Fetches ads */
+  /** Fetches favorite ads */
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       const res = await fetchAds({ status: 'checked' });
@@ -52,6 +55,7 @@ export default function FavoriteList() {
 
   // ------------------------------------------
 
+  /** @const {TOrder[]} orders The possible sort commands */
   const orders: TOrder[] = [
     { id: 'addressAsc', title: 'Cím szerint növekvő' },
     { id: 'addressDesc', title: 'Cím szerint csökkenő' },

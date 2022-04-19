@@ -10,8 +10,13 @@ type FavoriteButtonProps = {
 
 export default function FavoriteButton({ adId, status }: FavoriteButtonProps) {
 
+  /** @const {TAdStatus} statusState The current favorite status of the ad */
   const [statusState, setStatusState] = useState<TAdStatus>(status);
 
+  /**
+   * Handles the clicking on the favorite button; adding or removing ad from favorites
+   * @param e 
+   */
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
     e.preventDefault();
     

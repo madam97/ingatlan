@@ -12,6 +12,10 @@ type HeadingProps = {
 
 export default function Heading({ title, count, activeOrder = '', orders = [], setActiveOrder = () => {} }: HeadingProps) {
 
+  /**
+   * Handles the sort select input's value change
+   * @param e 
+   */
   const handleOrderChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     e.preventDefault(); 
     setActiveOrder(e.target.value);
