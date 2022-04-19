@@ -1,0 +1,16 @@
+#page-ad-detailed {
+  .ad-component-date {
+    margin-top: $spacer * 2.25;
+  }
+
+  // Mobile
+  @media (max-width: breakpoint-max('sm')) {
+    .ad-component-date {
+      margin-top: 0;
+    }
+
+    .btn-lg {
+      width: 100%;
+    }
+  }
+}
