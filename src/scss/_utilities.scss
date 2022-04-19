@@ -2,6 +2,12 @@
   padding-left: calc($spacer * 3 + $main-menu-width);
 
   @media (max-width: breakpoint-max('md')) {
+    &:not(.pl-main-menu-md) {
+      padding-left: $spacer;
+    }
+  }
+
+  @media (max-width: breakpoint-max('sm')) {
     padding-left: $spacer;
   }
 }
