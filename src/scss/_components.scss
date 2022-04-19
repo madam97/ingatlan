@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: $spacer;
   padding: 0 $spacer * 1.5;
   height: $spacer * 3;
 
@@ -25,6 +24,31 @@
 
     span {
       font-size: 0.875rem;
+    }
+  }
+}
+
+.ad-component {
+  @media (min-width: breakpoint-min('md')) {
+    flex-direction: row;
+
+    .card-img {
+      object-fit: cover;
+      width: 212px;
+      height: 180px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .card-title {
+      font-size: 1.875rem;
+    }
+
+    .card-text {
+      .subheading-font {
+        font-size: 1.5rem;
+        line-height: 1em;
+      }
     }
   }
 }
