@@ -29,7 +29,7 @@ export default function Heading({ title, count, activeOrder = '', orders = [], s
 
       {count && <span>{count} db</span>}
 
-      {orders && 
+      {orders.length > 0 && 
         <Form.Select className="shadow-lg" value={activeOrder} onChange={handleOrderChange}>
           <option value="">Rendezés</option>
 
