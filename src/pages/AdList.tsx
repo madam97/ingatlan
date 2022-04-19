@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { fetchAds } from '../models/AdModel';
 import Ad from '../components/Ad';
 import Heading from '../components/Heading';
 import IAd from '../interfaces/IAd';
@@ -11,14 +12,10 @@ export default function AdList() {
 
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
-      try {
-        const res = await axios.get(process.env.REACT_APP_API_BASE_URL + '/ads');
+      const res = await fetchAds();
 
-        if (res.data) {
-          setAds(res.data);
-        }
-      } catch(err) {
-
+      if (typeof res !== 'string') {
+        setAds(res);
       }
     }
 
