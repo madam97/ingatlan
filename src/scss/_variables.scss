@@ -1,7 +1,10 @@
 // Colors
+$gray-500:            #B2B2B2;
 $gray-600:            #666666;
+
 $primary:             #323EC8;
 $secondary:           #EBECFA;
+$yellow:              #FFB300;
 
 $light:               #ffffff;
 $bg-light:            #FAFBFF;
@@ -24,8 +27,12 @@ $container-padding-x: $spacer;
 $navbar-light-color:                  $primary;
 $navbar-light-toggler-border-color:   $primary;
 
+// Buttons
+$btn-border-radius:   $border-radius-sm;
+
 // Utils
 $box-shadow:          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
+$box-shadow-lg:       0px 0px 0.625rem rgba(50, 62, 200, 0.2);
 
 // Sizes
 $header-height:       65px;
