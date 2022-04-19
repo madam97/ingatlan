@@ -27,7 +27,7 @@ export default function AdList() {
 
   return (
     <main>
-      <Container className="pl-main-menu" fluid>
+      <Container className="pl-main-menu mb-4" fluid>
         <Heading title="Lista" count={ads.length} />
 
         {ads.map(ad => 

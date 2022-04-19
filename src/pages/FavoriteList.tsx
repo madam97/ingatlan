@@ -65,7 +65,7 @@ export default function FavoriteList() {
 
   return (
     <main>
-      <Container className="pl-main-menu" fluid>
+      <Container className="pl-main-menu mb-4" fluid>
         <Heading title="Kedvencek" activeOrder={activeOrder} orders={orders} setActiveOrder={setActiveOrder} />
 
         {ads.map(ad => <Ad className="mt-3" key={ad.adId} ad={ad} showLink showImage showUploadDate />)}
