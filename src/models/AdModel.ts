@@ -25,6 +25,21 @@ const fetchAds = async (params: object = {}): Promise<IAd[] | string> => {
 }
 
 /**
+ * Returns the given ad's data
+ * @param {number} id
+ * @returns {Promise<IAd | string>}
+ */
+const fetchAd = async (id: number): Promise<IAd | string> => {
+  try {
+    const res = await axios.get(AD_URL + '/' + id);
+
+    return res.data ?? 'no data returned';
+  } catch(err) {
+    return err instanceof Error ? err.message : 'unknown error';
+  }
+}
+
+/**
  * Update the given ad's data
  * @param id 
  * @param data 
@@ -40,4 +55,4 @@ const patchAd = async (id: number, data: object): Promise<IAd | string> => {
   }
 } 
 
-export { AD_URL, fetchAds, patchAd };
+export { AD_URL, fetchAds, fetchAd, patchAd };
