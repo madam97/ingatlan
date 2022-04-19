@@ -64,11 +64,11 @@ export default function FavoriteList() {
   ]
 
   return (
-    <main className="pl-main-menu">
-      <Container fluid>
+    <main>
+      <Container className="pl-main-menu" fluid>
         <Heading title="Kedvencek" activeOrder={activeOrder} orders={orders} setActiveOrder={setActiveOrder} />
 
-        {ads.map(ad => <Ad key={ad.adId} ad={ad} showUploadDate={true} />)}
+        {ads.map(ad => <Ad className="mt-3" key={ad.adId} ad={ad} showLink showImage showUploadDate />)}
       </Container>
     </main>
   )

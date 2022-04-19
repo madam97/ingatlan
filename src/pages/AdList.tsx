@@ -26,11 +26,13 @@ export default function AdList() {
   // ------------------------------------------
 
   return (
-    <main className="pl-main-menu">
-      <Container fluid>
+    <main>
+      <Container className="pl-main-menu" fluid>
         <Heading title="Lista" count={ads.length} />
 
-        {ads.map(ad => <Ad key={ad.adId} ad={ad} />)}
+        {ads.map(ad => 
+          <Ad className="mt-3" key={ad.adId} ad={ad} showLink showImage />
+        )}
       </Container>
     </main>
   )
