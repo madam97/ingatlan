@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import IAd from '../interfaces/IAd';
 import FavoriteButton from './FavoriteButton';
 
@@ -14,11 +15,13 @@ export default function Ad({ ad }: AdProps) {
       <Card.Body>
         <Card.Title>{ad.address}</Card.Title>
         <Card.Text>
-          <p className="subheading-font">{ad.price} {ad.currency}</p>
+          <p className="subheading-font">{ad.price.toLocaleString('hu-HU')} {ad.currency}</p>
 
           <FavoriteButton adId={ad.adId} status={ad.status} />
         </Card.Text>
       </Card.Body>
+
+      <Link to={`/ads/${ad.adId}`}></Link>
     </Card>
   )
 }

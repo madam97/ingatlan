@@ -47,9 +47,16 @@
   }
 
   .favorite-btn-component {
+    z-index: 2;
     position: absolute;
     top: $spacer * 1.5;
     right: $spacer;
+  }
+
+  &>a {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
   }
 
   // Desktop
