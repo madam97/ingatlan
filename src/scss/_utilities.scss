@@ -1,8 +1,8 @@
 .pl-main-menu {
-  padding-left: calc($spacer * 2 + $main-menu-width);
+  padding-left: calc($spacer * 3 + $main-menu-width);
 
   @media (max-width: breakpoint-max('md')) {
-    padding-left: 0;
+    padding-left: $spacer;
   }
 }
 
@@ -16,5 +16,9 @@
   font-weight: $subheadings-font-weight;
 }
 
+.fs-sm { font-size: 0.875rem; }
+
 .text-gray-500 { color: $gray-500; }
 .text-yellow { color: $yellow; }
+
+.shadow-inset { box-shadow: $box-shadow-inset; }

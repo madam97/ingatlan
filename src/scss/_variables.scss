@@ -13,20 +13,33 @@ $body-bg:             $bg-light;
 
 // Sizes
 $spacer:              1.25rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .5,
+  2: $spacer * .75,
+  3: $spacer,
+  4: $spacer * 2,
+  5: $spacer * 3,
+  6: $spacer * 4,
+);
+
 $border-radius:       1rem;
 $border-radius-sm:    0.5rem;
 
 // Fonts
+$font-family-base:                    'SF Pro Text', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
 $headings-font-family:                'Red Hat Display', sans-serif;
 $headings-font-weight:                700;
 $subheadings-font-weight:             500;
 
 // Utils
-$box-shadow:          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
-$box-shadow-lg:       0px 0px 0.625rem rgba(50, 62, 200, 0.2);
+$box-shadow:                          0px 0px 1.25rem rgba(50, 62, 200, 0.1);
+$box-shadow-lg:                       0px 0px 0.625rem rgba(50, 62, 200, 0.2);
+$box-shadow-inset:                    inset 0px 0px 20px rgba(0, 0, 0, 0.05);
 
 // Grid
-$container-padding-x: $spacer;
+$container-padding-x:                 $spacer;
 
 // Navbar
 $navbar-light-color:                  $primary;
@@ -35,6 +48,11 @@ $navbar-light-toggler-border-color:   $primary;
 // Buttons
 $btn-border-radius:                   $border-radius-sm;
 
+$btn-padding-y-lg:                    $spacer * 0.75;
+$btn-padding-x-lg:                    $spacer * 3.5;
+$btn-font-size-lg:                    1.25rem;
+$btn-border-radius-lg:                0.5rem;
+
 // Form
 $input-bg:                            $white;
 $form-select-border-width:            0;
@@ -42,6 +60,6 @@ $form-select-border-radius:           $border-radius-sm;
 $form-select-focus-box-shadow:        $box-shadow-lg;
 
 // Sizes
-$header-height:       65px;
-$main-menu-width:     260px;
-$footer-height:       169px;
+$header-height:                       65px;
+$main-menu-width:                     260px;
+$footer-height:                       169px;
