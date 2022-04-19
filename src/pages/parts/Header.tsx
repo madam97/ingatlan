@@ -2,9 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { ArrowLeftShort, ChevronLeft, ListUl, StarFill } from 'react-bootstrap-icons';
+import { ListUl, StarFill } from 'react-bootstrap-icons';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 export default function Header() {
 
@@ -12,32 +11,28 @@ export default function Header() {
   const location = useLocation();
 
   /**
-   * Returns the go back link based on the current url
-   * @returns {string}
+   * Returns true if main menu has to be displayed based on the current url
+   * @returns {boolean}
    */
-  const getGoBackLink = useCallback((): string => {
-    if (location.pathname.match(/\/ads\/[0-9]*/i)) {
-      return '/';
-    } else {
-      return '';
-    }
+  const getShowMainMenu = useCallback((): boolean => {
+    return !location.pathname.match(/\/ads\/[0-9]*/i);
   }, [location]);
 
-  /** @const {string} goBackLink The link that appears instead of the main menu */
-  const [goBackLink, setGoBackLink] = useState<string>( getGoBackLink() );
+  /** @const {boolean} showMainMenu If true, the main menu is displayed */
+  const [showMainMenu, setShowMainMenu] = useState<boolean>( getShowMainMenu() );
 
-  /** If the url changes, will generate the go back link */
+  /** If the url changes, will check if main menu should be displayed */
   useEffect(() => {
-    setGoBackLink( getGoBackLink() );
-  }, [location, getGoBackLink])
+    setShowMainMenu( getShowMainMenu() );
+  }, [location, getShowMainMenu])
 
 
   // ------------------------------------------
 
   return (
-    <header>
+    <header className={!showMainMenu ? 'd-none d-sm-block' : ''}>
       <Navbar className="shadow rounded-bottom" bg="light" expand="md" fixed="top">
-        {!goBackLink &&
+        {showMainMenu &&
           <>
             <Navbar.Toggle aria-controls="main-menu" />
 
@@ -56,13 +51,6 @@ export default function Header() {
               </Nav>
             </Navbar.Collapse>
           </>
-        }
-
-        {goBackLink && 
-          <Link className="btn btn-secondary fixed-top" to={goBackLink}>
-            <span className="d-none d-sm-inline"><ArrowLeftShort /> Vissza</span>
-            <span className="d-sm-none"><ChevronLeft /></span>
-          </Link>
         }
       </Navbar>
     </header>

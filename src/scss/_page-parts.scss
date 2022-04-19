@@ -10,54 +10,12 @@ header {
     max-width: $main-menu-width;
   }
 
-  .btn-secondary {
-    right: unset;
-    display: flex;
-    align-items: center;
-  }
-
-  // Desktop
-  @media (min-width: breakpoint-min('sm')) {
-    .btn-secondary {
-      top: calc($spacer * 2 + $header-height);
-      left: $spacer;
-      padding: 0.5rem 1.5rem 0.5rem 1rem;
-      height: $spacer * 3;
-
-      svg {
-        margin-right: 0.4rem;
-        font-size: 2rem;
-      }
-    }
-  }
-
   // Mobile
   @media (max-width: breakpoint-max('sm')) {
     #main-menu {
       top: calc($spacer + $header-height);
       right: $spacer;
       max-width: unset;
-    }
-
-    .btn-secondary {
-      top: $spacer * 2.5;
-      left: $spacer * 0.8;
-      padding: 0;
-      width: $spacer * 2;
-      height: $spacer * 2;
-
-      &,
-      &:hover,
-      &:focus,
-      &.active {
-        background-color: $gray-700;
-        color: $white;
-      }
-
-      svg {
-        margin-left: 0.5rem;
-        font-size: 1.25rem;
-      }
     }
   }
 }
