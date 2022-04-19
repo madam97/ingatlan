@@ -22,6 +22,12 @@
   font-weight: $subheadings-font-weight;
 }
 
+.bg-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .fs-sm { font-size: 0.875rem; }
 
 .text-gray-500 { color: $gray-500; }
